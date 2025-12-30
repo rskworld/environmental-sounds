@@ -1,0 +1,72 @@
+# Environmental Sound Dataset - Git Ignore
+# Project: Environmental Sound Dataset
+# Website: https://rskworld.in
+# Founded by: Molla Samser
+# Designer & Tester: Rima Khatun
+# Email: help@rskworld.in
+# Phone: +91 93305 39277
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Models
+models/
+*.pkl
+*.h5
+*.hdf5
+*.model
+
+# Dataset files (large files)
+*.wav
+*.mp3
+*.flac
+*.zip
+environmental-sounds/train/
+environmental-sounds/test/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Matplotlib
+*.png
+*.jpg
+*.jpeg
+!environmental-sounds.png
+

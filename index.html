@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Project: Environmental Sound Dataset
+    Website: https://rskworld.in
+    Founded by: Molla Samser
+    Designer & Tester: Rima Khatun
+    Email: help@rskworld.in
+    Phone: +91 93305 39277
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Sound Dataset - RSK World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .description {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card i {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .download-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #764ba2;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #667eea;
+        }
+        
+        ul, ol {
+            line-height: 1.8;
+        }
+        
+        .section h3 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-music icon"></i>
+            <h1>Environmental Sound Dataset</h1>
+            <p>Audio Data Classification for Sound Event Detection</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>About This Dataset</h2>
+                <p class="description">
+                    This dataset contains audio recordings of environmental sounds including nature sounds, 
+                    urban sounds, and everyday audio events with class labels. Perfect for sound event detection, 
+                    audio scene classification, and environmental monitoring applications.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Dataset Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Environmental Sounds</h3>
+                        <p>Diverse collection of natural and urban audio samples</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tags"></i>
+                        <h3>Multiple Sound Classes</h3>
+                        <p>Well-organized categories for classification tasks</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Various Durations</h3>
+                        <p>Audio samples of different lengths for robust training</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Training & Test Sets</h3>
+                        <p>Pre-split datasets ready for machine learning</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Ready for Classification</h3>
+                        <p>Preprocessed and labeled for immediate use</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-file-archive"></i>
+                        <h3>Dataset Format</h3>
+                        <p>Organized structure with train/test splits and metadata</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Advanced Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-magic"></i>
+                        <h3>Audio Augmentation</h3>
+                        <p>8+ augmentation techniques: time stretch, pitch shift, noise injection, reverb, and more</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Deep Learning Models</h3>
+                        <p>CNN, LSTM, and Transformer architectures for state-of-the-art classification</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Similarity Search</h3>
+                        <p>Find similar audio files, detect duplicates, and cluster audio by similarity</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <h3>Real-time Classification</h3>
+                        <p>Live audio classification from microphone with streaming support</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Model Interpretability</h3>
+                        <p>Feature importance analysis, prediction explanations, and visualization tools</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Quality Assessment</h3>
+                        <p>Automatic quality scoring, issue detection, and audio enhancement</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Web API</h3>
+                        <p>RESTful API for remote predictions with batch processing support</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Batch Processing</h3>
+                        <p>Parallel processing utilities for large-scale audio operations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Dataset Structure</h2>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; font-family: monospace; margin-top: 20px;">
+                    <pre style="margin: 0; color: #333;">environmental-sounds/
+├── train/
+│   ├── class1/
+│   │   ├── sample1.wav
+│   │   ├── sample2.wav
+│   │   └── ...
+│   ├── class2/
+│   │   └── ...
+│   └── ...
+├── test/
+│   ├── class1/
+│   ├── class2/
+│   └── ...
+├── metadata.csv
+└── README.md</pre>
+                </div>
+                <p style="margin-top: 15px; color: #666;">
+                    The dataset is organized with separate train and test directories. Each class has its own folder containing audio samples in WAV, MP3, or FLAC format.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Quick Start Guide</h2>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">1. Installation</h3>
+                    <pre style="background: white; padding: 15px; border-radius: 5px; overflow-x: auto; margin-bottom: 20px;">pip install -r requirements.txt</pre>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 15px;">2. Load Dataset</h3>
+                    <pre style="background: white; padding: 15px; border-radius: 5px; overflow-x: auto; margin-bottom: 20px;">from load_data import load_environmental_sounds
+
+train_data, train_labels = load_environmental_sounds('train')
+test_data, test_labels = load_environmental_sounds('test')</pre>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 15px;">3. Train Model</h3>
+                    <pre style="background: white; padding: 15px; border-radius: 5px; overflow-x: auto; margin-bottom: 20px;">from train_model import train_classifier
+
+model, scaler, label_encoder, accuracy = train_classifier(
+    train_data, train_labels, model_type='random_forest'
+)</pre>
+                    
+                    <h3 style="color: #667eea; margin-bottom: 15px;">4. Use Advanced Features</h3>
+                    <pre style="background: white; padding: 15px; border-radius: 5px; overflow-x: auto;"># Audio Augmentation
+from augment_audio import AudioAugmenter
+augmenter = AudioAugmenter()
+augmented = augmenter.augment(audio)
+
+# Deep Learning
+from deep_learning_models import AudioCNN
+model = AudioCNN(input_shape=(128, 128, 1), num_classes=10)
+
+# Real-time Classification
+from realtime_classification import RealTimeClassifier
+classifier = RealTimeClassifier(model, scaler, label_encoder)</pre>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Technologies & Tools</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">WAV</span>
+                    <span class="tech-tag">MP3</span>
+                    <span class="tech-tag">FLAC</span>
+                    <span class="tech-tag">Librosa</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Flask API</span>
+                    <span class="tech-tag">Audio Processing</span>
+                    <span class="tech-tag">Deep Learning</span>
+                    <span class="tech-tag">Machine Learning</span>
+                </div>
+                <div style="margin-top: 20px;">
+                    <span class="difficulty-badge">Difficulty: Intermediate</span>
+                    <span class="difficulty-badge" style="background: #17a2b8;">Python 3.8+</span>
+                    <span class="difficulty-badge" style="background: #ffc107; color: #333;">Open Source</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Project Files & Documentation</h2>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Core Modules</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>load_data.py</strong> - Dataset loading and feature extraction
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>analyze.py</strong> - Audio analysis and statistics
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>train_model.py</strong> - Model training and evaluation
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>augment_audio.py</strong> - Advanced audio augmentation
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>deep_learning_models.py</strong> - CNN, LSTM, Transformer models
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>audio_similarity.py</strong> - Similarity search and clustering
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>realtime_classification.py</strong> - Real-time audio classification
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>model_interpretability.py</strong> - Model explanation tools
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>audio_quality.py</strong> - Quality assessment and validation
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>api_server.py</strong> - RESTful API server
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-file-code" style="color: #667eea; margin-right: 10px;"></i>
+                            <strong>batch_processing.py</strong> - Batch processing utilities
+                        </li>
+                    </ul>
+                    
+                    <h3 style="color: #667eea; margin-top: 30px; margin-bottom: 15px;">Documentation</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-book" style="color: #28a745; margin-right: 10px;"></i>
+                            <strong>README.md</strong> - Complete project documentation
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-book" style="color: #28a745; margin-right: 10px;"></i>
+                            <strong>ADVANCED_FEATURES.md</strong> - Detailed advanced features guide
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-book" style="color: #28a745; margin-right: 10px;"></i>
+                            <strong>DATASET_STRUCTURE.md</strong> - Dataset organization guide
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #dee2e6;">
+                            <i class="fas fa-book" style="color: #28a745; margin-right: 10px;"></i>
+                            <strong>CONTRIBUTING.md</strong> - Contribution guidelines
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <i class="fas fa-book" style="color: #28a745; margin-right: 10px;"></i>
+                            <strong>examples/data_exploration.ipynb</strong> - Jupyter notebook examples
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="download-section">
+                <h2>Download & Get Started</h2>
+                <p style="margin-bottom: 20px;">Download the complete dataset package including all code, documentation, and examples.</p>
+                
+                <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">
+                        <i class="fas fa-file-archive"></i> Dataset Package
+                    </h3>
+                    <p><strong>File Location:</strong> <code>./environmental-sounds/environmental-sounds.zip</code></p>
+                    <p><strong>Contents:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Complete Python codebase with all modules</li>
+                        <li>Dataset structure (train/test directories)</li>
+                        <li>Documentation (README, guides, examples)</li>
+                        <li>Jupyter notebook examples</li>
+                        <li>Requirements file</li>
+                        <li>Setup scripts</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #666;">
+                        <i class="fas fa-info-circle"></i> 
+                        <strong>Note:</strong> The zip file contains the complete project. Extract it to start working immediately.
+                    </p>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px;">
+                    <a href="./environmental-sounds.zip" class="btn" style="font-size: 1.2em; padding: 18px 35px;">
+                        <i class="fas fa-download"></i> Download Dataset ZIP
+                    </a>
+                    <a href="https://rskworld.in" class="btn" style="background: #28a745; font-size: 1.2em; padding: 18px 35px;">
+                        <i class="fas fa-globe"></i> Visit RSK World
+                    </a>
+                    <a href="https://github.com" class="btn" style="background: #333; font-size: 1.2em; padding: 18px 35px;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 10px; text-align: left;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">
+                        <i class="fas fa-rocket"></i> Quick Installation
+                    </h3>
+                    <ol style="margin-left: 20px; line-height: 2;">
+                        <li>Download and extract <code>environmental-sounds.zip</code></li>
+                        <li>Navigate to the extracted directory</li>
+                        <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+                        <li>Run example: <code>python example_usage.py</code></li>
+                        <li>Start API server: <code>python api_server.py</code></li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Use Cases & Applications</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-microphone-alt"></i>
+                        <h3>Sound Event Detection</h3>
+                        <p>Identify and classify specific sound events in audio streams</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-city"></i>
+                        <h3>Urban Monitoring</h3>
+                        <p>Monitor urban soundscapes and noise pollution levels</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tree"></i>
+                        <h3>Nature Sound Analysis</h3>
+                        <p>Classify and analyze natural environmental sounds</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Smart Devices</h3>
+                        <p>Enable audio classification in IoT and smart home devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Research & Education</h3>
+                        <p>Perfect for machine learning research and teaching</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-industry"></i>
+                        <h3>Industrial Applications</h3>
+                        <p>Quality control and monitoring in industrial settings</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>API Endpoints</h2>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="margin-bottom: 15px;">Start the API server with: <code>python api_server.py</code></p>
+                    <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 10px;">
+                        <strong style="color: #28a745;">GET</strong> <code>/health</code> - Health check endpoint
+                    </div>
+                    <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 10px;">
+                        <strong style="color: #007bff;">POST</strong> <code>/predict</code> - Single audio prediction
+                    </div>
+                    <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 10px;">
+                        <strong style="color: #007bff;">POST</strong> <code>/predict_batch</code> - Batch predictions
+                    </div>
+                    <div style="background: white; padding: 15px; border-radius: 5px; margin-bottom: 10px;">
+                        <strong style="color: #28a745;">GET</strong> <code>/classes</code> - List available classes
+                    </div>
+                    <div style="background: white; padding: 15px; border-radius: 5px;">
+                        <strong style="color: #007bff;">POST</strong> <code>/analyze</code> - Audio analysis
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>RSK World</strong> - Free Programming Resources & Source Code</p>
+            <p>Founded by Molla Samser, with Designer & Tester Rima Khatun</p>
+            <p>
+                <a href="https://rskworld.in">Website</a> | 
+                <a href="mailto:help@rskworld.in">Email: help@rskworld.in</a> | 
+                <a href="tel:+919330539277">Phone: +91 93305 39277</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
